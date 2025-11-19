@@ -1,0 +1,9 @@
+////simple near-primitive , alinea puntos de scatter usando la orientacion N de otra geometria
+
+int prim;
+vector uv;
+float dist = xyzdist(1, @P, prim, uv);
+
+vector n = primuv(1, "N", prim, uv);
+
+@N = n;
