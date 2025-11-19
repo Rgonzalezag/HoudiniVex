@@ -1,0 +1,36 @@
+///USAR SLIDER, crea splines triangulares calculado el total de puntos de la curva , encuentra punto medio y crea triangulo
+
+int GG = chi("points");  
+        
+int total = GG *2 - 1;          
+// -----------------------------
+// CONSTRUIR EL TRIÁNGULO
+// -----------------------------
+int prev_pt = -1;
+
+for (int i = 0; i < total; i++)
+{
+    float x, y;
+
+    if (i < GG)
+    {
+        // SUBIDA
+        x = i;
+        y = i;
+    }
+    else
+    {
+        // BAJADA
+        int j = i - (GG - 1);
+        x = (GG - 1) - j;
+        y = (GG - 1) + j;
+    }
+
+    vector P = set(x, y, 0);
+    int new_pt = addpoint(0, P);
+
+    if (prev_pt >= 0)
+        addprim(0, "polyline", prev_pt, new_pt);
+
+    prev_pt = new_pt;
+}
