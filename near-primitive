@@ -1,4 +1,5 @@
 ////simple near-primitive , alinea puntos de scatter usando la orientacion N de otra geometria
+////Ejemplo: Escaleras
 
 int prim;
 vector uv;
