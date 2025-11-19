@@ -13,18 +13,16 @@ for (int i = 0; i < total; i++)
     float x, y;
 
     if (i < GG)
-    {
-        // SUBIDA
-        x = i;
-        y = i;
-    }
-    else
-    {
-        // BAJADA
-        int j = i - (GG - 1);
-        x = (GG - 1) - j;
-        y = (GG - 1) + j;
-    }
+{
+    x = i;        // sube horizontalmente
+    y = i;        // altura aumenta
+}
+else
+{
+    int j = i - (GG - 1);
+    x = (GG - 1) + j; // sigue horizontal
+    y = (GG - 1) - j; // baja verticalmente
+}
 
     vector P = set(x, y, 0);
     int new_pt = addpoint(0, P);
