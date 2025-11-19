@@ -1,0 +1,11 @@
+///Snap a cuadrilla , usar en point
+
+float step = 1.0;
+
+// Snap en XZ (plano horizontal)
+@P.x = rint(@P.x / step) * step;
+@P.z = rint(@P.z / step) * step;
+
+// Si también quieres snap en Y, activa esta línea:
+
+@P.y = rint(@P.y / step) * step;
